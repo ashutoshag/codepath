@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let TIP_SEGMENT_KEY =  "default_tip_segment_index";
+
     @IBOutlet weak var BillTextField: UITextField!
     @IBOutlet weak var TotalLabel: UILabel!
     @IBOutlet weak var TipLabel: UILabel!
@@ -19,6 +21,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        getSavedTipChoice()
+        calculateTip(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +49,13 @@ class ViewController: UIViewController {
         let total = bill + tip;
         TipLabel.text = String(format: "$%.2f", tip)
         TotalLabel.text = String(format: "$%.2f", total)
+    }
+
+    func getSavedTipChoice() {
+        let defaults = UserDefaults.standard
+        let index = defaults.object(forKey: TIP_SEGMENT_KEY)
+        let intIndex = (index as? Int) ?? 0
+        TipControl.selectedSegmentIndex = intIndex;
     }
 }
 

@@ -22,14 +22,9 @@ class SettingsViewController: UIViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        getSavedTipChoice()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getSavedTipChoice()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         getSavedTipChoice()
     }
 
@@ -57,7 +52,6 @@ class SettingsViewController: UIViewController {
         let defaults = UserDefaults.standard
         let index = defaults.object(forKey: TIP_SEGMENT_KEY)
         let intIndex = (index as? Int) ?? 0
-        print(String(format: "Selected default index: %d", intIndex))
-        DefaultTipController.setEnabled(true, forSegmentAt: intIndex);
+        DefaultTipController.selectedSegmentIndex = intIndex;
     }
 }

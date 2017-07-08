@@ -155,7 +155,7 @@
                                     <segment title="25%"/>
                                 </segments>
                                 <connections>
-                                    <action selector="tipPercentageChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xvz-EM-mn6"/>
+                                    <action selector="onDefaultTipChoiceChange:" destination="1T7-fx-Ueq" eventType="valueChanged" id="MNs-jW-Wzh"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEK-aj-fGg">
@@ -175,6 +175,9 @@
                             <constraint firstItem="15a-I9-kM0" firstAttribute="top" secondItem="uEK-aj-fGg" secondAttribute="bottom" constant="33" id="y16-VO-qtQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="DefaultTipController" destination="15a-I9-kM0" id="Xx1-Ga-221"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zjy-c0-bAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

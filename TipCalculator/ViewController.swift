@@ -28,9 +28,11 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         getSavedTipChoice()
         calculateTip(self)
-        ResultView.isHidden = true
-        InputView.alpha = 1
-        ResultView.alpha = 0
+        hideResults()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        BillTextField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,16 +51,16 @@ class ViewController: UIViewController {
     @IBAction func calculateTip(_ sender: Any) {
         let tipPercentages = [0.18, 0.20, 0.25];
         let bill = Double(BillTextField.text!) ?? 0;
+        if (bill == 0) {
+            hideResults()
+            return
+        }
         let tip = bill * tipPercentages[TipControl.selectedSegmentIndex];
         let total = bill + tip;
-        TipLabel.text = String(format: "$%.2f", tip)
-        TotalLabel.text = String(format: "$%.2f", total)
+        self.TipLabel.text = String(format: "$%.2f", tip)
+        self.TotalLabel.text = String(format: "$%.2f", total)
         
-        ResultView.isHidden = false
-        UIView.animate(withDuration: 0.1, animations: {
-            self.ResultView.alpha = 1.0
-        })
-        ResultView.setNeedsDisplay()
+        showResultsView()
     }
 
     func getSavedTipChoice() {
@@ -66,6 +68,16 @@ class ViewController: UIViewController {
         let index = defaults.object(forKey: TIP_SEGMENT_KEY)
         let intIndex = (index as? Int) ?? 0
         TipControl.selectedSegmentIndex = intIndex;
+    }
+    
+    func hideResults() {
+        // Hide the result view initially.
+        ResultView.alpha = 0
+    }
+    
+    func showResultsView() {
+        // when the user changes the input text, then add the result view.
+        ResultView.alpha = 1
     }
 }
 

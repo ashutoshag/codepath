@@ -59,14 +59,13 @@
                                     <constraint firstAttribute="height" constant="161" id="vbg-WO-Ipo"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-u6-eKX">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-u6-eKX" userLabel="InputView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="175"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCT-be-Shh">
                                         <rect key="frame" x="19" y="58" width="337" height="58"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                         <connections>
                                             <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="MBZ-Nw-SXb"/>
@@ -121,6 +120,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="BillTextField" destination="JCT-be-Shh" id="i55-0b-SJp"/>
+                        <outlet property="InputView" destination="hNq-u6-eKX" id="Pno-o7-6nJ"/>
+                        <outlet property="ResultView" destination="Luc-K9-SYC" id="sgP-RV-Gaw"/>
                         <outlet property="TipControl" destination="oil-ib-pdx" id="yQO-Km-sad"/>
                         <outlet property="TipLabel" destination="xVN-rj-EYn" id="J5J-iS-s5e"/>
                         <outlet property="TotalLabel" destination="Th9-we-QAy" id="8am-nd-4wu"/>
@@ -134,6 +135,25 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1076" y="137.18140929535232"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="6Gj-m2-O6Z">
+            <objects>
+                <viewController id="1CT-xV-kE7" customClass="TestViewController" customModule="TipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LiJ-ll-YCf"/>
+                        <viewControllerLayoutGuide type="bottom" id="z8b-B4-7c2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tvB-bV-mdh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pBZ-G7-a80"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8hT-T8-PUf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="889.20539730134942"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="r3c-Ks-RUI">
@@ -200,6 +220,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpp-4Q-ipf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VpD-6Q-kk1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lhg-lr-uZ9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0l9-gw-7jf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1CT-xV-kE7" kind="relationship" relationship="rootViewController" id="siU-sU-b40"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZA-aq-rDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="890"/>
         </scene>
     </scenes>
 </document>

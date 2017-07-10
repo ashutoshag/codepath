@@ -202,6 +202,7 @@
 				TargetAttributes = {
 					1B8C2A001F11396C005C0377 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = X27LXMQ7YK;
 						ProvisioningStyle = Automatic;
 					};
 					1B8C2A141F11396C005C0377 = {
@@ -426,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X27LXMQ7YK;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asagarwal.TipCalculator;
@@ -438,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = X27LXMQ7YK;
 				INFOPLIST_FILE = TipCalculator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.asagarwal.TipCalculator;

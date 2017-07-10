@@ -42,9 +42,9 @@ class UserSettings {
         let billDateInCalendar = calendar.startOfDay(for: billDate)
         let todaysDateInCalendar = calendar.startOfDay(for: todaysDate)
         
-        let days = calendar.dateComponents([.day], from: billDateInCalendar, to: todaysDateInCalendar)
+        let days = calendar.dateComponents([.minute], from: billDateInCalendar, to: todaysDateInCalendar)
         print("days in middle: \(days)")
-        if (days.day! < 5) {
+        if (days.day! <= 10) {
             return true
         }
         return false

@@ -75,12 +75,16 @@ class ViewController: UIViewController {
     
     func hideResults() {
         // Set the opacity of results view to 0
-        ResultView.alpha = 0
+        UIView.animate(withDuration: 0.4, animations: {
+            self.ResultView.alpha = 0
+        })
     }
     
     func showResultsView() {
         // when the user changes the input text, then add the result view.
-        ResultView.alpha = 1
+        UIView.animate(withDuration: 0.4, animations: {
+            self.ResultView.alpha = 1
+        })
     }
     
     func getSavedBillAmount() {

@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let TIP_SEGMENT_KEY =  "default_tip_segment_index";
-
     @IBOutlet weak var BillTextField: UITextField!
     @IBOutlet weak var TotalLabel: UILabel!
     @IBOutlet weak var TipLabel: UILabel!
@@ -27,17 +25,17 @@ class ViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         getSavedTipChoice()
+        getSavedBillAmount()
         calculateTip(self)
-        hideResults()
+        let bill = Double(BillTextField.text!) ?? 0;
+        if (bill == 0) {
+            hideResults()
+            return
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         BillTextField.becomeFirstResponder()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func onTap(_ sender: AnyObject) {
@@ -59,25 +57,35 @@ class ViewController: UIViewController {
         let total = bill + tip;
         self.TipLabel.text = String(format: "$%.2f", tip)
         self.TotalLabel.text = String(format: "$%.2f", total)
-        
+        saveBillAmount()
         showResultsView()
     }
 
     func getSavedTipChoice() {
-        let defaults = UserDefaults.standard
-        let index = defaults.object(forKey: TIP_SEGMENT_KEY)
-        let intIndex = (index as? Int) ?? 0
-        TipControl.selectedSegmentIndex = intIndex;
+        let userSettings = UserSettings()
+        TipControl.selectedSegmentIndex = userSettings.getTipPercentageChoiceIndex();
     }
     
     func hideResults() {
-        // Hide the result view initially.
+        // Set the opacity of results view to 0
         ResultView.alpha = 0
     }
     
     func showResultsView() {
         // when the user changes the input text, then add the result view.
         ResultView.alpha = 1
+    }
+    
+    func getSavedBillAmount() {
+        let userSettings = UserSettings()
+        if (userSettings.isBillAmountSet()) {
+            BillTextField.text = userSettings.getBillAmount()
+        }
+    }
+    
+    func saveBillAmount() {
+        let userSettings = UserSettings()
+        userSettings.saveBillAmount(billAmount: BillTextField.text!)
     }
 }
 

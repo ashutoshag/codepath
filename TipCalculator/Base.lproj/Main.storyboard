@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-u6-eKX" userLabel="InputView">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNq-u6-eKX" userLabel="InputView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="185"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCT-be-Shh">
@@ -165,13 +165,14 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Tip Percentage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEK-aj-fGg">
-                                <rect key="frame" x="19" y="265" width="175.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="19" y="252.5" width="275.5" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.31870997899999998" green="0.72340381149999999" blue="0.55442121060000005" alpha="0.66483274650000002" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.120575459509052" green="0.27114911586062185" blue="0.21293083926324094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="15a-I9-kM0" firstAttribute="leading" secondItem="FvS-7M-wzE" secondAttribute="leadingMargin" constant="3" id="Fgx-nu-zb8"/>
                             <constraint firstItem="15a-I9-kM0" firstAttribute="centerY" secondItem="FvS-7M-wzE" secondAttribute="centerY" id="ZRN-wq-VJx"/>
